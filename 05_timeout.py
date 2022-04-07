@@ -6,7 +6,7 @@ from time import sleep
 
 def work_on_message(message, broker):
     print('process body', message)
-    topic, timeout, text = message[2:−1].split(',')
+    topic, timeout, text = message[2:-1].split(',')
     print('process body', timeout, topic, text)
     sleep(int(timeout))
     publish.single(topic, payload=text, hostname=broker)
